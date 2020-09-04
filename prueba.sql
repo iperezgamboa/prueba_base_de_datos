@@ -11,7 +11,7 @@
 
 CREATE DATABASE prueba;
 
-\c prueba  -- You are now connected to database "prueba" as user "iperez".
+--\c prueba  You are now connected to database "prueba" as user "iperez".
 
 -- creacion de tablas
 CREATE TABLE clientes (id SERIAL PRIMARY KEY, nombre VARCHAR(100) NOT NULL, rut VARCHAR(100) UNIQUE NOT NULL, direccion VARCHAR(100));
@@ -23,11 +23,39 @@ CREATE TABLE categoria (id SERIAL PRIMARY KEY, nombre VARCHAR(100) NOT NULL UNIQ
 
 -- insertar 5 clientes
 
-
+INSERT INTO clientes (nombre,rut,direccion) VALUES
+    ('Ignacio Perez', 1, 'laflorida 5000'),
+    ('Nuno Silva', 234, 'portugal 5000'),
+    ('tatan najera', 2131, 'nuevazelanda 5000'),
+    ('juan cabanzon', 2332, 'españa 5000'),
+    ('tanya gilea', 3334, 'moldova 5000');
+  
 -- insertar 3 categorias
+
+INSERT INTO categoria(nombre, descripcion) VALUES
+    ('pelota','ideal para jugar'),
+    ('masajeador','ideal para masajear'),
+    ('gorra','necesaria para el sol');
 
 
 -- insertar 8 productos,
+
+INSERT INTO productos(nombre, descripcion, valor_unitario, categoria_id) VALUES
+    ('pintura', 'pinturas', 200, 1),
+    ('lapiz', 'paracolorear', 300, 2),
+    ('computador', 'paratrabajar', 100000, 3),
+    ('escoba', 'paralimpiar', 300, 3),
+    ('tv', 'parainformarse', 5000, 2),
+    ('escudo', 'paraprotegrese', 2000, 1),
+    ('sal', 'paramejorarlascomidas', 400, 1),
+    ('pistola', 'parajugar', 500, 3);
+
+
+
+
+
+
+
 
 -- insertar 10 facturas
 
